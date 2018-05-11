@@ -1,0 +1,17 @@
+<%= form_for(@task) do |f| %>
+  <div class="form-group col-md-4 col-md-offset-4">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-md-4 col-md-offset-4">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: "form-control" %>
+  </div>
+
+  <% unless @task.id.nil? %>
+    <%= f.check_box :completed %>
+  <% end %>
+
+  <%= f.submit class: 'btn btn-primary col-md-4 col-md-offset-4' %>
+<% end %>
